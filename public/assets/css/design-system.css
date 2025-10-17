@@ -1,0 +1,337 @@
+/**
+ * IO-TECH Design System
+ * CSS Variables and Design Tokens
+ *
+ * This file defines the foundational design tokens for the IO-TECH website
+ * including colors, typography, spacing, shadows, and other visual properties.
+ */
+
+:root {
+  /* ============================================
+     COLOR SYSTEM - IO-TECH Brand Colors
+     ============================================ */
+
+  /* Primary Brand Colors - Cyan to Blue Gradient */
+  --color-brand-50: rgb(227, 247, 253);    /* #e3f7fd - Lightest */
+  --color-brand-100: rgb(184, 235, 250);   /* #b8ebfa */
+  --color-brand-200: rgb(141, 223, 247);   /* #8ddff7 */
+  --color-brand-300: rgb(98, 211, 244);    /* #62d3f4 */
+  --color-brand-400: rgb(74, 203, 239);    /* #4acbef */
+  --color-brand-500: rgb(39, 174, 229);    /* #27aee5 - CYAN PRINCIPAL */
+  --color-brand-600: rgb(30, 154, 208);    /* #1e9ad0 - Cyan Dark */
+  --color-brand-700: rgb(18, 122, 191);    /* #127abf - AZUL MEDIO */
+  --color-brand-800: rgb(14, 90, 146);     /* #0e5a92 */
+  --color-brand-900: rgb(23, 70, 129);     /* #174681 - AZUL OSCURO */
+
+  /* Grayscale - Neutral colors for text and backgrounds */
+  --color-gray-50: rgb(249, 250, 251);     /* #f9fafb - Lightest */
+  --color-gray-100: rgb(243, 244, 246);    /* #f3f4f6 */
+  --color-gray-200: rgb(229, 231, 235);    /* #e5e7eb */
+  --color-gray-300: rgb(209, 213, 219);    /* #d1d5db */
+  --color-gray-400: rgb(156, 163, 175);    /* #9ca3af */
+  --color-gray-500: rgb(107, 114, 128);    /* #6b7280 */
+  --color-gray-600: rgb(75, 85, 99);       /* #4b5563 */
+  --color-gray-700: rgb(55, 65, 81);       /* #374151 */
+  --color-gray-800: rgb(31, 41, 55);       /* #1f2937 */
+  --color-gray-900: rgb(17, 24, 39);       /* #111827 - Darkest */
+
+  /* Semantic Colors */
+  --color-success: rgb(34, 197, 94);       /* #22c55e - Green */
+  --color-warning: rgb(251, 191, 36);      /* #fbbf24 - Yellow */
+  --color-error: rgb(239, 68, 68);         /* #ef4444 - Red */
+  --color-info: rgb(59, 130, 246);         /* #3b82f6 - Blue */
+
+  /* Text Colors */
+  --color-text-primary: var(--color-gray-900);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-tertiary: var(--color-gray-500);
+  --color-text-inverse: rgb(255, 255, 255);
+
+  /* Background Colors */
+  --color-bg-primary: rgb(255, 255, 255);
+  --color-bg-secondary: var(--color-gray-50);
+  --color-bg-tertiary: var(--color-gray-100);
+
+  /* ============================================
+     TYPOGRAPHY SYSTEM
+     ============================================ */
+
+  /* Font Families */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-display: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-mono: 'Fira Code', Consolas, Monaco, 'Courier New', monospace;
+
+  /* Font Sizes - Display (Headings) */
+  --text-display-2xl: 72px;
+  --text-display-2xl-height: 90px;
+  --text-display-xl: 60px;
+  --text-display-xl-height: 72px;
+  --text-display-lg: 48px;
+  --text-display-lg-height: 60px;
+  --text-display-md: 36px;
+  --text-display-md-height: 44px;
+  --text-display-sm: 30px;
+  --text-display-sm-height: 38px;
+  --text-display-xs: 24px;
+  --text-display-xs-height: 32px;
+
+  /* Font Sizes - Body */
+  --text-xl: 20px;
+  --text-xl-height: 30px;
+  --text-lg: 18px;
+  --text-lg-height: 28px;
+  --text-md: 16px;
+  --text-md-height: 24px;
+  --text-sm: 14px;
+  --text-sm-height: 20px;
+  --text-xs: 12px;
+  --text-xs-height: 18px;
+
+  /* Font Weights */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+
+  /* ============================================
+     SPACING SYSTEM
+     Base unit: 4px
+     ============================================ */
+
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --space-40: 160px;
+  --space-48: 192px;
+  --space-64: 256px;
+
+  /* ============================================
+     BORDER RADIUS
+     ============================================ */
+
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+  --radius-full: 9999px;
+
+  /* ============================================
+     SHADOWS
+     ============================================ */
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+
+  /* ============================================
+     TRANSITIONS
+     ============================================ */
+
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ============================================
+     Z-INDEX LAYERS
+     ============================================ */
+
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-fixed: 1200;
+  --z-modal-backdrop: 1300;
+  --z-modal: 1400;
+  --z-popover: 1500;
+  --z-tooltip: 1600;
+
+  /* ============================================
+     BREAKPOINTS (for reference in JS)
+     ============================================ */
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* ============================================
+     CONTAINER WIDTHS
+     ============================================ */
+
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  line-height: var(--text-md-height);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+}
+
+/* ============================================
+   TYPOGRAPHY BASE STYLES
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-semibold);
+  line-height: 1.2;
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: var(--text-display-lg);
+  line-height: var(--text-display-lg-height);
+  font-weight: var(--font-bold);
+}
+
+h2 {
+  font-size: var(--text-display-md);
+  line-height: var(--text-display-md-height);
+}
+
+h3 {
+  font-size: var(--text-display-sm);
+  line-height: var(--text-display-sm-height);
+}
+
+h4 {
+  font-size: var(--text-display-xs);
+  line-height: var(--text-display-xs-height);
+}
+
+h5 {
+  font-size: var(--text-xl);
+  line-height: var(--text-xl-height);
+}
+
+h6 {
+  font-size: var(--text-lg);
+  line-height: var(--text-lg-height);
+}
+
+p {
+  margin-bottom: var(--space-4);
+}
+
+a {
+  color: var(--color-brand-600);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-brand-700);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ============================================
+   RESPONSIVE TYPOGRAPHY
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --text-display-2xl: 48px;
+    --text-display-2xl-height: 60px;
+    --text-display-xl: 40px;
+    --text-display-xl-height: 48px;
+    --text-display-lg: 36px;
+    --text-display-lg-height: 44px;
+    --text-display-md: 30px;
+    --text-display-md-height: 38px;
+    --text-display-sm: 24px;
+    --text-display-sm-height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --text-display-2xl: 36px;
+    --text-display-2xl-height: 44px;
+    --text-display-xl: 32px;
+    --text-display-xl-height: 40px;
+    --text-display-lg: 28px;
+    --text-display-lg-height: 36px;
+  }
+}
+
+/* ============================================
+   FOCUS STYLES (Accessibility)
+   ============================================ */
+
+*:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline-color: var(--color-brand-500);
+}
+
+/* ============================================
+   SELECTION STYLES
+   ============================================ */
+
+::selection {
+  background-color: var(--color-brand-200);
+  color: var(--color-brand-900);
+}
+
+::-moz-selection {
+  background-color: var(--color-brand-200);
+  color: var(--color-brand-900);
+}

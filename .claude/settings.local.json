@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/antro/OneDrive/Documentos/Proyectos/Source/io-tech web/**)",
+      "Bash(npm run dev:*)",
+      "Bash(netstat:*)",
+      "Bash(cat:*)",
+      "Read(//c/temp/tw-studio/tailwind-plus-studio/**)",
+      "Bash(findstr:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

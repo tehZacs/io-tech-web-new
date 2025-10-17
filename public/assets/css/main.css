@@ -1,0 +1,21 @@
+/**
+ * IO-TECH Main Stylesheet
+ * Entry point for all styles
+ */
+
+/* Google Fonts - Must be first */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+/* Design System - CSS Variables and tokens */
+@import './design-system.css';
+
+/* Component Styles - Reusable UI components */
+@import './components.css';
+
+/* Utility Classes - Helper classes */
+@import './utilities.css';
+
+/* Tailwind CSS base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

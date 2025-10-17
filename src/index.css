@@ -1,0 +1,162 @@
+@import 'tailwindcss';
+
+@layer base {
+  /* Import fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --color-brand-50: #E3F2FD;
+    --color-brand-100: #BBDEFB;
+    --color-brand-200: #90CAF9;
+    --color-brand-300: #64B5F6;
+    --color-brand-400: #42A5F5;
+    --color-brand-500: #1976D2;
+    --color-brand-600: #1565C0;
+    --color-brand-700: #0D47A1;
+    --color-brand-800: #0A3A7F;
+    --color-brand-900: #072959;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply text-gray-900 bg-white m-0 p-0;
+  }
+
+  * {
+    @apply border-gray-200;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl w-full;
+  }
+
+  /* Gradient utilities */
+  .gradient-brand {
+    background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%);
+  }
+
+  .gradient-subtle {
+    background: linear-gradient(135deg, rgba(25, 118, 210, 0.05) 0%, rgba(13, 71, 161, 0.1) 100%);
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    @apply backdrop-blur-md bg-white/80 border border-white/20;
+  }
+
+  /* Custom scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+
+  /* Rotating gradient animation for hero overlay */
+  @keyframes rotate-gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient-slow {
+    background-size: 200% 200%;
+    animation: rotate-gradient 20s ease infinite;
+  }
+}
+
+/* Override any conflicting styles */
+.bg-clip-text {
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.text-transparent {
+  color: transparent !important;
+}
+
+/* Force text color utilities to work properly */
+.text-white {
+  color: #ffffff !important;
+}
+
+.text-gray-200 {
+  color: #e5e7eb !important;
+}
+
+.text-gray-300 {
+  color: #d1d5db !important;
+}
+
+.text-gray-600 {
+  color: #4b5563 !important;
+}
+
+.text-gray-700 {
+  color: #374151 !important;
+}
+
+.text-gray-900 {
+  color: #111827 !important;
+}
+
+.text-accent-300 {
+  color: #4DD0E1 !important;
+}
+
+.text-accent-400 {
+  color: #26C6DA !important;
+}
+
+.text-brand-600 {
+  color: #1565C0 !important;
+}
+
+.text-brand-700 {
+  color: #0D47A1 !important;
+}
+
+/* Background colors */
+.bg-brand-600 {
+  background-color: #1565C0 !important;
+}
+
+.bg-brand-700 {
+  background-color: #0D47A1 !important;
+}
+
+.bg-accent-500 {
+  background-color: #00BCD4 !important;
+}
+
+.bg-accent-600 {
+  background-color: #00ACC1 !important;
+}
