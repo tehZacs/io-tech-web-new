@@ -107,7 +107,7 @@ export const ImprovedHeroSection = () => {
   }, [currentImageIndex, showMatrix]);
 
   return (
-    <section className="relative min-h-[75vh] flex items-center overflow-hidden -mt-20" style={{ backgroundColor: '#161b33' }}>
+    <section className="relative min-h-[75vh] flex items-center overflow-hidden -mt-20" style={{ backgroundColor: '#101820' }}>
       {/* Matrix Background Effect - Shown when isMatrixVisible is true */}
       <div
         className="absolute inset-0 z-0 transition-opacity duration-1500"
@@ -146,12 +146,12 @@ export const ImprovedHeroSection = () => {
           />
         </picture>
 
-        {/* Dark overlay for images to improve text contrast - Dark blue-gray */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(22, 27, 51, 0.85), rgba(25, 32, 60, 0.75), rgba(22, 27, 51, 0.80), rgba(25, 32, 60, 0.75))' }}></div>
+        {/* Dark overlay for images to improve text contrast - Deep dark */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(16, 24, 32, 0.85), rgba(20, 28, 36, 0.75), rgba(16, 24, 32, 0.80), rgba(20, 28, 36, 0.75))' }}></div>
       </div>
 
-      {/* Dark gradient overlay for better contrast - Dark blue-gray tones */}
-      <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to bottom, rgba(22, 27, 51, 0.5), rgba(22, 27, 51, 0.3), rgba(22, 27, 51, 0.6))' }}></div>
+      {/* Dark gradient overlay for better contrast - Deep dark tones */}
+      <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to bottom, rgba(16, 24, 32, 0.5), rgba(16, 24, 32, 0.3), rgba(16, 24, 32, 0.6))' }}></div>
 
       <div className="container relative z-10 pt-52 pb-20">
         <div className="max-w-4xl">

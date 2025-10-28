@@ -52,8 +52,8 @@ export const MatrixBackground = ({
 
     // Draw function
     const draw = () => {
-      // Dark blue-gray background (#161b33)
-      ctx.fillStyle = 'rgba(22, 27, 51, 0.08)';
+      // Deep dark background (#101820)
+      ctx.fillStyle = 'rgba(16, 24, 32, 0.08)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.font = `bold ${fontSize}px monospace`;
