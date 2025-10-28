@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { MatrixBackground } from '../effects/MatrixBackground';
 
 /**
  * Improved Hero Section
@@ -23,6 +24,8 @@ export const ImprovedHeroSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [nextImageIndex, setNextImageIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [showMatrix, setShowMatrix] = useState(true); // Start with Matrix
+  const [isMatrixVisible, setIsMatrixVisible] = useState(true);
 
   useEffect(() => {
     // Preload only next 2 images to save bandwidth (lazy loading strategy)
@@ -46,35 +49,78 @@ export const ImprovedHeroSection = () => {
     // Preload initial images
     preloadImages(currentImageIndex);
 
-    // Change image every 30 seconds
+    // Alternate between Matrix (30s) and Images (30s each)
     const interval = setInterval(() => {
-      setIsTransitioning(true);
+      if (showMatrix) {
+        // Currently showing Matrix, switch to image
+        setIsTransitioning(true);
 
-      // Get random next image (different from current)
-      let randomIndex;
-      do {
-        randomIndex = Math.floor(Math.random() * heroImages.length);
-      } while (randomIndex === currentImageIndex);
+        // Get random next image (different from current)
+        let randomIndex;
+        do {
+          randomIndex = Math.floor(Math.random() * heroImages.length);
+        } while (randomIndex === currentImageIndex);
 
-      setNextImageIndex(randomIndex);
+        setNextImageIndex(randomIndex);
+        preloadImages(randomIndex);
 
-      // Preload next images for smooth transitions
-      preloadImages(randomIndex);
+        // Fade out Matrix, fade in image
+        setTimeout(() => {
+          setIsMatrixVisible(false);
+          setCurrentImageIndex(randomIndex);
+          setIsTransitioning(false);
+          setShowMatrix(false);
+        }, 1500);
 
-      // After fade animation completes, update current image
-      setTimeout(() => {
-        setCurrentImageIndex(randomIndex);
-        setIsTransitioning(false);
-      }, 1500); // Match this with CSS transition duration
-    }, 30000);
+      } else {
+        // Currently showing image, switch to Matrix or next image
+        // 50% chance to show Matrix, 50% to show another image
+        if (Math.random() > 0.5) {
+          // Show Matrix
+          setIsTransitioning(true);
+          setTimeout(() => {
+            setIsMatrixVisible(true);
+            setIsTransitioning(false);
+            setShowMatrix(true);
+          }, 1500);
+        } else {
+          // Show another image
+          setIsTransitioning(true);
+
+          let randomIndex;
+          do {
+            randomIndex = Math.floor(Math.random() * heroImages.length);
+          } while (randomIndex === currentImageIndex);
+
+          setNextImageIndex(randomIndex);
+          preloadImages(randomIndex);
+
+          setTimeout(() => {
+            setCurrentImageIndex(randomIndex);
+            setIsTransitioning(false);
+          }, 1500);
+        }
+      }
+    }, 30000); // 30 seconds
 
     return () => clearInterval(interval);
-  }, [currentImageIndex]);
+  }, [currentImageIndex, showMatrix]);
 
   return (
-    <section className="relative min-h-[75vh] flex items-center overflow-hidden -mt-20">
-      {/* Animated Background Images with Crossfade - Optimized with WebP */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative min-h-[75vh] flex items-center overflow-hidden -mt-20 bg-gray-900">
+      {/* Matrix Background Effect - Shown when isMatrixVisible is true */}
+      <div
+        className="absolute inset-0 z-0 transition-opacity duration-1500"
+        style={{ opacity: isMatrixVisible ? 1 : 0, pointerEvents: isMatrixVisible ? 'auto' : 'none' }}
+      >
+        <MatrixBackground opacity={0.25} />
+      </div>
+
+      {/* Animated Background Images with Crossfade - Shown when isMatrixVisible is false */}
+      <div
+        className="absolute inset-0 z-0 transition-opacity duration-1500"
+        style={{ opacity: isMatrixVisible ? 0 : 1, pointerEvents: isMatrixVisible ? 'none' : 'auto' }}
+      >
         {/* Current Image - WebP with JPG fallback */}
         <picture className="absolute inset-0 w-full h-full">
           <source srcSet={heroImages[currentImageIndex].webp} type="image/webp" />
@@ -99,10 +145,10 @@ export const ImprovedHeroSection = () => {
             loading="lazy"
           />
         </picture>
-
-        {/* Animated transparent overlay with rotating gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/85 via-brand-900/75 via-gray-900/80 to-brand-900/75 animate-gradient-slow"></div>
       </div>
+
+      {/* Dark gradient overlay for better contrast */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-gray-900/50 via-gray-900/30 to-gray-900/60"></div>
 
       <div className="container relative z-10 pt-52 pb-20">
         <div className="max-w-4xl">
