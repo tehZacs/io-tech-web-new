@@ -14,20 +14,31 @@ export const ContactoPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-brand-600 to-brand-800 text-white py-20">
-        <div className="container">
+      {/* Hero with Background Image */}
+      <section className="relative bg-gray-900 text-white py-32 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=2000"
+            alt="Equipo de trabajo colaborativo"
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-600/80 to-brand-800/80"></div>
+        </div>
+
+        {/* Content */}
+        <div className="container relative z-10">
           <div className="max-w-4xl">
             <nav className="text-sm mb-6">
-              <Link to="/" className="text-white/80 hover:text-white">Inicio</Link>
+              <Link to="/" className="text-white/80 hover:text-white transition-colors">Inicio</Link>
               <span className="mx-2 text-white/60">/</span>
               <span className="text-white">Contacto</span>
             </nav>
-            <h1 className="font-display font-bold text-4xl lg:text-display-lg mb-6">
+            <h1 className="font-display font-bold text-4xl lg:text-6xl mb-6 leading-tight">
               Hablemos de tu Proyecto
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl">
-              Agenda una consultoría gratuita con nuestros expertos
+            <p className="text-xl text-white/90 max-w-3xl leading-relaxed">
+              Agenda una consultoría gratuita con nuestros expertos. Estamos listos para transformar tus ideas en soluciones tecnológicas.
             </p>
           </div>
         </div>

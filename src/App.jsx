@@ -12,6 +12,7 @@ import { BusinessIntelligencePage } from './pages/services/BusinessIntelligenceP
 import { ExperienciaDigitalPage } from './pages/services/ExperienciaDigitalPage';
 import { CiberseguridadPage } from './pages/services/CiberseguridadPage';
 import { ConsultoriaPage } from './pages/services/ConsultoriaPage';
+import { AvisoPrivacidadPage } from './pages/AvisoPrivacidadPage';
 
 /**
  * Main App Component with React Router
@@ -37,6 +38,7 @@ function App() {
             <Route path="/servicios/consultoria" element={<ConsultoriaPage />} />
             <Route path="/nosotros" element={<NosotrosPage />} />
             <Route path="/contacto" element={<ContactoPage />} />
+            <Route path="/aviso-privacidad" element={<AvisoPrivacidadPage />} />
           </Routes>
         </main>
         <Footer />

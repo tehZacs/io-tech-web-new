@@ -136,9 +136,16 @@ export const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="container py-6">
-          <p className="text-gray-400 text-sm text-center md:text-left">
-            &copy; {currentYear} IO-TECH. Todos los derechos reservados.
-          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-sm text-center md:text-left">
+              &copy; {currentYear} IO-TECH. Todos los derechos reservados.
+            </p>
+            <div className="flex gap-6">
+              <Link to="/aviso-privacidad" className="text-gray-400 hover:text-white transition-colors text-sm">
+                Aviso de Privacidad
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
