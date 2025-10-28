@@ -145,6 +145,9 @@ export const ImprovedHeroSection = () => {
             loading="lazy"
           />
         </picture>
+
+        {/* Dark overlay for images to improve text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/85 via-brand-900/75 via-gray-900/80 to-brand-900/75"></div>
       </div>
 
       {/* Dark gradient overlay for better contrast */}
