@@ -52,8 +52,8 @@ export const MatrixBackground = ({
 
     // Draw function
     const draw = () => {
-      // Semi-transparent black to create trail effect
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
+      // VS Code dark gray background (like #1E1E1E)
+      ctx.fillStyle = 'rgba(30, 30, 30, 0.08)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.font = `bold ${fontSize}px monospace`;
