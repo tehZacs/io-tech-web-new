@@ -42,12 +42,12 @@ export const MatrixBackground = ({
       };
     }
 
-    // IO-TECH brand colors (blue gradient)
+    // Gray tones for subtle effect
     const colors = [
-      'rgba(21, 101, 192, 1)',     // brand-600
-      'rgba(25, 118, 210, 0.9)',   // brand-500
-      'rgba(30, 136, 229, 0.8)',   // brand-400
-      'rgba(66, 165, 245, 0.7)',   // brand-300
+      'rgba(120, 130, 145, 1)',     // Light gray-blue
+      'rgba(100, 110, 125, 0.9)',   // Medium gray-blue
+      'rgba(80, 90, 105, 0.8)',     // Darker gray-blue
+      'rgba(60, 70, 85, 0.7)',      // Dark gray-blue
     ];
 
     // Draw function
