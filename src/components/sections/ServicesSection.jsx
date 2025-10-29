@@ -89,25 +89,22 @@ export const ServicesSection = () => {
       className="py-20 lg:py-32 bg-gray-950 relative"
       style={{ marginTop: '-100px' }}
     >
-      {/* SVG notch at the top - points upward into the hero */}
+      {/* SVG notch at the top - only bottom filled, notch area transparent */}
       <svg
         className="absolute top-0 left-0 w-full h-[100px] pointer-events-none z-10"
         viewBox="0 0 1200 100"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <defs>
-          {/* Gradient matching section background */}
-          <linearGradient id="sectionGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="rgb(3, 7, 18)" />
-            <stop offset="50%" stopColor="rgb(3, 7, 18)" />
-            <stop offset="100%" stopColor="rgb(3, 7, 18)" />
-          </linearGradient>
-        </defs>
-        {/* Notch shape - points upward */}
+        {/* Left section - only bottom part filled */}
         <path
-          d="M0,0 L300,0 Q320,0 330,15 L380,75 Q400,95 420,95 L780,95 Q800,95 820,75 L870,15 Q880,0 900,0 L1200,0 L1200,100 L0,100 Z"
-          fill="url(#sectionGradient)"
+          d="M0,100 L0,0 L300,0 Q320,0 330,15 L380,75 Q400,95 420,95 L420,100 Z"
+          className="fill-gray-950"
+        />
+        {/* Right section - only bottom part filled */}
+        <path
+          d="M780,95 Q800,95 820,75 L870,15 Q880,0 900,0 L1200,0 L1200,100 Z"
+          className="fill-gray-950"
         />
         {/* Accent line following the notch edge */}
         <path
