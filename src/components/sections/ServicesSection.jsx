@@ -84,45 +84,26 @@ export const ServicesSection = () => {
   ];
 
   return (
-    <section id="servicios" className="relative overflow-hidden bg-gray-950" style={{ marginTop: '-140px', paddingTop: '200px', paddingBottom: '5rem' }}>
-      {/* SVG Angular/Curved Divider at top - Creates irregular transition from hero */}
-      <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-10">
-        <svg
-          className="relative block w-full h-[140px]"
-          viewBox="0 0 1200 140"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Main angular and curved shape - fills with section background */}
+    <section
+      id="servicios"
+      className="py-20 lg:py-32 bg-gray-950 relative"
+      style={{
+        clipPath: 'polygon(0 6%, 12% 3%, 25% 7%, 38% 4%, 50% 8%, 62% 3%, 75% 6%, 88% 4%, 100% 7%, 100% 100%, 0 100%)',
+        marginTop: '-10vh'
+      }}
+    >
+      {/* Accent lines following the clip-path shape */}
+      <div className="absolute top-0 left-0 right-0 h-[80px] overflow-hidden pointer-events-none z-20">
+        <svg className="absolute w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 10">
           <path
-            d="M0,140 L0,80 L200,40 L400,70 Q600,90 800,60 L1000,80 L1200,50 L1200,140 Z"
-            className="fill-gray-950"
-          />
-          {/* Accent angular shapes with IO-Tech colors */}
-          <path
-            d="M0,80 L200,40 L400,70"
-            className="fill-none stroke-accent-400"
-            strokeWidth="2"
-            opacity="0.6"
-          />
-          <path
-            d="M800,60 L1000,80 L1200,50"
-            className="fill-none stroke-brand-500"
-            strokeWidth="2"
-            opacity="0.6"
-          />
-          {/* Curved accent */}
-          <path
-            d="M400,70 Q600,90 800,60"
-            className="fill-none stroke-accent-300"
-            strokeWidth="3"
+            d="M0,6 L12,3 L25,7 L38,4 L50,8 L62,3 L75,6 L88,4 L100,7"
+            fill="none"
+            className="stroke-accent-400"
+            strokeWidth="0.2"
             opacity="0.5"
           />
         </svg>
       </div>
-
-      {/* Top central semicircle with gradient to transparent */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 rounded-b-full bg-gradient-to-b from-cyan-400/20 to-transparent blur-xl"></div>
 
       {/* Bottom light border with gradient to transparent */}
       <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent"></div>
