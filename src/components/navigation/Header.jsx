@@ -94,20 +94,31 @@ export const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/75 backdrop-blur-md shadow-sm'
-          : 'bg-transparent'
+          ? 'backdrop-blur-md shadow-sm'
+          : ''
       }`}
       style={{
-        borderBottom: isScrolled
-          ? '2px solid transparent'
-          : '1px solid rgba(255, 255, 255, 0.1)',
-        backgroundImage: isScrolled
-          ? 'linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), linear-gradient(90deg, transparent, rgba(25, 118, 210, 0.5) 30%, rgba(0, 188, 212, 0.5) 70%, transparent)'
-          : 'none',
-        backgroundOrigin: 'border-box',
-        backgroundClip: 'padding-box, border-box'
+        backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.75)' : 'transparent',
+        borderBottom: isScrolled ? 'none' : '1px solid rgba(255, 255, 255, 0.1)'
       }}
     >
+      {/* Animated beam at bottom */}
+      {isScrolled && (
+        <div
+          className="absolute bottom-0 left-0 right-0 h-[2px] overflow-hidden"
+          style={{
+            background: 'linear-gradient(90deg, transparent 0%, rgba(25, 118, 210, 0.6) 25%, rgba(0, 188, 212, 0.8) 50%, rgba(25, 118, 210, 0.6) 75%, transparent 100%)',
+            backgroundSize: '200% 100%',
+            animation: 'beam-slide 3s linear infinite'
+          }}
+        />
+      )}
+      <style>{`
+        @keyframes beam-slide {
+          0% { background-position: 200% 0; }
+          100% { background-position: -200% 0; }
+        }
+      `}</style>
       <div className="container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
