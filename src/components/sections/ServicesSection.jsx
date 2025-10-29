@@ -86,37 +86,30 @@ export const ServicesSection = () => {
   return (
     <section
       id="servicios"
-      className="py-20 lg:py-32 relative"
+      className="py-20 lg:py-32 bg-gray-950 relative"
       style={{
-        background: 'linear-gradient(to bottom, #101820 0%, rgb(3, 7, 18) 20%)',
         marginTop: '-8vh'
       }}
     >
-      {/* SVG for rounded notch cutout */}
+      {/* SVG shape - transparent at top (shows hero), filled at bottom (section color) */}
       <svg
-        className="absolute top-0 left-0 w-full h-[120px] pointer-events-none z-10"
-        viewBox="0 0 1200 120"
+        className="absolute top-0 left-0 w-full h-[100px] pointer-events-none z-10"
+        viewBox="0 0 1200 100"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <defs>
-          <linearGradient id="heroGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style={{ stopColor: '#101820', stopOpacity: 1 }} />
-            <stop offset="100%" style={{ stopColor: 'rgb(3, 7, 18)', stopOpacity: 1 }} />
-          </linearGradient>
-        </defs>
-        {/* Main shape with single centered notch and rounded corners */}
+        {/* Main shape: straight top line with angular notch, filled bottom */}
         <path
-          d="M0,0 L0,120 L480,120 Q500,120 510,100 L540,40 Q550,20 570,20 L630,20 Q650,20 660,40 L690,100 Q700,120 720,120 L1200,120 L1200,0 Z"
-          fill="url(#heroGradient)"
+          d="M0,100 L450,100 Q470,100 480,85 L520,25 Q530,10 550,10 L650,10 Q670,10 680,25 L720,85 Q730,100 750,100 L1200,100 L1200,0 L0,0 Z"
+          fill="rgb(3, 7, 18)"
         />
-        {/* Accent line for notch */}
+        {/* Accent lines on the notch edges */}
         <path
-          d="M510,100 L540,40 Q550,20 570,20 L630,20 Q650,20 660,40 L690,100"
+          d="M480,85 L520,25 Q530,10 550,10 L650,10 Q670,10 680,25 L720,85"
           fill="none"
           className="stroke-accent-400"
           strokeWidth="2"
-          opacity="0.4"
+          opacity="0.5"
         />
       </svg>
 
