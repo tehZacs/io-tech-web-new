@@ -84,9 +84,42 @@ export const ServicesSection = () => {
   ];
 
   return (
-    <section id="servicios" className="py-20 lg:py-32 bg-gray-950 relative overflow-hidden">
-      {/* Top light border with gradient to transparent */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent"></div>
+    <section id="servicios" className="py-20 lg:py-32 bg-gray-950 relative overflow-hidden" style={{ marginTop: '-1px' }}>
+      {/* SVG Angular/Curved Divider at top - Creates irregular transition from hero */}
+      <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none" style={{ transform: 'translateY(-99%)' }}>
+        <svg
+          className="relative block w-full h-[100px] md:h-[140px]"
+          viewBox="0 0 1200 140"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Main angular and curved shape - fills with section background */}
+          <path
+            d="M0,140 L0,80 L200,40 L400,70 Q600,90 800,60 L1000,80 L1200,50 L1200,140 Z"
+            fill="rgb(3, 7, 18)"
+          />
+          {/* Accent angular shapes with IO-Tech colors */}
+          <path
+            d="M0,80 L200,40 L400,70"
+            className="fill-none stroke-accent-400"
+            strokeWidth="2"
+            opacity="0.5"
+          />
+          <path
+            d="M800,60 L1000,80 L1200,50"
+            className="fill-none stroke-brand-500"
+            strokeWidth="2"
+            opacity="0.5"
+          />
+          {/* Curved accent */}
+          <path
+            d="M400,70 Q600,90 800,60"
+            className="fill-none stroke-accent-300"
+            strokeWidth="3"
+            opacity="0.4"
+          />
+        </svg>
+      </div>
 
       {/* Top central semicircle with gradient to transparent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 rounded-b-full bg-gradient-to-b from-cyan-400/20 to-transparent blur-xl"></div>
