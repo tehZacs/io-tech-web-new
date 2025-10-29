@@ -86,33 +86,39 @@ export const ServicesSection = () => {
   return (
     <section
       id="servicios"
-      className="py-20 lg:py-32 bg-gray-950 relative"
+      className="py-20 lg:py-32 relative"
       style={{
-        clipPath: 'polygon(0 0, 0 8%, 20% 8%, 25% 0, 75% 0, 80% 8%, 100% 8%, 100% 100%, 0 100%)',
+        background: 'linear-gradient(to bottom, #101820 0%, rgb(3, 7, 18) 20%)',
         marginTop: '-8vh'
       }}
     >
-      {/* Accent lines for the angular cutouts */}
-      <div className="absolute top-0 left-0 right-0 h-[100px] overflow-hidden pointer-events-none z-20">
-        <svg className="absolute w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 10">
-          {/* Left angular notch */}
-          <path
-            d="M20,8 L25,0"
-            fill="none"
-            className="stroke-accent-400"
-            strokeWidth="0.15"
-            opacity="0.6"
-          />
-          {/* Right angular notch */}
-          <path
-            d="M75,0 L80,8"
-            fill="none"
-            className="stroke-brand-500"
-            strokeWidth="0.15"
-            opacity="0.6"
-          />
-        </svg>
-      </div>
+      {/* SVG for rounded notch cutout */}
+      <svg
+        className="absolute top-0 left-0 w-full h-[120px] pointer-events-none z-10"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="heroGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style={{ stopColor: '#101820', stopOpacity: 1 }} />
+            <stop offset="100%" style={{ stopColor: 'rgb(3, 7, 18)', stopOpacity: 1 }} />
+          </linearGradient>
+        </defs>
+        {/* Main shape with single centered notch and rounded corners */}
+        <path
+          d="M0,0 L0,120 L480,120 Q500,120 510,100 L540,40 Q550,20 570,20 L630,20 Q650,20 660,40 L690,100 Q700,120 720,120 L1200,120 L1200,0 Z"
+          fill="url(#heroGradient)"
+        />
+        {/* Accent line for notch */}
+        <path
+          d="M510,100 L540,40 Q550,20 570,20 L630,20 Q650,20 660,40 L690,100"
+          fill="none"
+          className="stroke-accent-400"
+          strokeWidth="2"
+          opacity="0.4"
+        />
+      </svg>
 
       {/* Bottom light border with gradient to transparent */}
       <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent"></div>
