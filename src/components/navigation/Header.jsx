@@ -107,16 +107,22 @@ export const Header = () => {
         <div
           className="absolute bottom-0 left-0 right-0 h-[2px] overflow-hidden"
           style={{
-            background: 'linear-gradient(90deg, transparent 0%, rgba(25, 118, 210, 0.6) 25%, rgba(0, 188, 212, 0.8) 50%, rgba(25, 118, 210, 0.6) 75%, transparent 100%)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(25, 118, 210, 0.3) 25%, rgba(0, 188, 212, 0.5) 50%, rgba(25, 118, 210, 0.3) 75%, transparent 100%)',
             backgroundSize: '200% 100%',
-            animation: 'beam-slide 3s linear infinite'
+            animation: 'beam-breathe 4s ease-in-out infinite'
           }}
         />
       )}
       <style>{`
-        @keyframes beam-slide {
-          0% { background-position: 200% 0; }
-          100% { background-position: -200% 0; }
+        @keyframes beam-breathe {
+          0%, 100% {
+            background-position: 0% 0;
+            opacity: 0.4;
+          }
+          50% {
+            background-position: 100% 0;
+            opacity: 1;
+          }
         }
       `}</style>
       <div className="container">
