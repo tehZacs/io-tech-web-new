@@ -199,24 +199,37 @@ export const ImprovedHeroSection = () => {
         </div>
       </div>
 
-      {/* SVG Wave/Angular Divider at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
+      {/* SVG Angular/Curved Divider at bottom - More dynamic */}
+      <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-20">
         <svg
-          className="relative block w-full h-[60px] md:h-[80px]"
-          viewBox="0 0 1200 120"
+          className="relative block w-full h-[100px] md:h-[140px]"
+          viewBox="0 0 1200 140"
           preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Angular and curved path */}
+          {/* Main angular and curved shape */}
           <path
-            d="M0,0 L0,40 L300,80 Q600,100 900,60 L1200,20 L1200,0 Z"
+            d="M0,0 L0,60 L200,100 L400,70 Q600,50 800,80 L1000,60 L1200,90 L1200,0 Z"
             className="fill-white"
           />
-          {/* Accent line with IO-Tech colors */}
+          {/* Accent angular shapes with gradients */}
           <path
-            d="M0,40 L300,80 Q600,100 900,60 L1200,20"
+            d="M0,60 L200,100 L400,70"
+            className="fill-none stroke-accent-400"
+            strokeWidth="2"
+            opacity="0.4"
+          />
+          <path
+            d="M800,80 L1000,60 L1200,90"
             className="fill-none stroke-brand-500"
             strokeWidth="2"
+            opacity="0.4"
+          />
+          {/* Curved accent */}
+          <path
+            d="M400,70 Q600,50 800,80"
+            className="fill-none stroke-accent-300"
+            strokeWidth="3"
             opacity="0.3"
           />
         </svg>
