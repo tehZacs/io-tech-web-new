@@ -94,13 +94,18 @@ export const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/75 backdrop-blur-md border-b border-gray-200 shadow-sm'
-          : 'bg-transparent border-b border-white/10'
+          ? 'bg-white/75 backdrop-blur-md shadow-sm'
+          : 'bg-transparent'
       }`}
       style={{
-        boxShadow: isScrolled
-          ? '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(25, 118, 210, 0.15)'
-          : 'none'
+        borderBottom: isScrolled
+          ? '2px solid transparent'
+          : '1px solid rgba(255, 255, 255, 0.1)',
+        backgroundImage: isScrolled
+          ? 'linear-gradient(white, white), linear-gradient(90deg, transparent, rgba(25, 118, 210, 0.5) 30%, rgba(0, 188, 212, 0.5) 70%, transparent)'
+          : 'none',
+        backgroundOrigin: 'border-box',
+        backgroundClip: 'padding-box, border-box'
       }}
     >
       <div className="container">
