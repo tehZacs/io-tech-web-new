@@ -97,6 +97,11 @@ export const Header = () => {
           ? 'bg-white/75 backdrop-blur-md border-b border-gray-200 shadow-sm'
           : 'bg-transparent border-b border-white/10'
       }`}
+      style={{
+        boxShadow: isScrolled
+          ? '0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(25, 118, 210, 0.15)'
+          : 'none'
+      }}
     >
       <div className="container">
         <div className="flex items-center justify-between h-20">
