@@ -98,14 +98,14 @@ export const ServicesSection = () => {
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Main shape: top is transparent, bottom is filled. Wider notch from 30% to 70% */}
+        {/* Main shape: wide notch from 25% to 75%, rounded corners, bottom filled */}
         <path
-          d="M0,0 L360,0 Q380,0 390,15 L480,70 Q500,85 600,85 Q700,85 720,70 L810,15 Q820,0 840,0 L1200,0 L1200,100 L0,100 Z"
+          d="M0,100 L300,100 Q320,100 330,85 L380,25 Q400,5 420,5 L780,5 Q800,5 820,25 L870,85 Q880,100 900,100 L1200,100 L1200,0 L0,0 Z"
           fill="rgb(3, 7, 18)"
         />
-        {/* Accent lines on the notch edges */}
+        {/* Accent line following the notch */}
         <path
-          d="M390,15 L480,70 Q500,85 600,85 Q700,85 720,70 L810,15"
+          d="M330,85 L380,25 Q400,5 420,5 L780,5 Q800,5 820,25 L870,85"
           fill="none"
           className="stroke-accent-400"
           strokeWidth="2"
