@@ -198,6 +198,29 @@ export const ImprovedHeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* SVG Wave/Angular Divider at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none">
+        <svg
+          className="relative block w-full h-[60px] md:h-[80px]"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Angular and curved path */}
+          <path
+            d="M0,0 L0,40 L300,80 Q600,100 900,60 L1200,20 L1200,0 Z"
+            className="fill-white"
+          />
+          {/* Accent line with IO-Tech colors */}
+          <path
+            d="M0,40 L300,80 Q600,100 900,60 L1200,20"
+            className="fill-none stroke-brand-500"
+            strokeWidth="2"
+            opacity="0.3"
+          />
+        </svg>
+      </div>
     </section>
   );
 };
