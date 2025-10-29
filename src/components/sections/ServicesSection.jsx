@@ -91,19 +91,24 @@ export const ServicesSection = () => {
         marginTop: '-100px'
       }}
     >
-      {/* SVG shape - transparent at top (shows hero), filled at bottom (section color) */}
+      {/* SVG shape - only bottom part filled, top is transparent to show hero */}
       <svg
         className="absolute top-0 left-0 w-full h-[100px] pointer-events-none z-10"
         viewBox="0 0 1200 100"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Main shape: wide notch from 25% to 75%, rounded corners, bottom filled */}
+        {/* Left filled section */}
         <path
-          d="M0,100 L300,100 Q320,100 330,85 L380,25 Q400,5 420,5 L780,5 Q800,5 820,25 L870,85 Q880,100 900,100 L1200,100 L1200,0 L0,0 Z"
+          d="M0,0 L0,100 L300,100 Q320,100 330,85 L380,25 Q400,5 420,5 L420,0 Z"
           fill="rgb(3, 7, 18)"
         />
-        {/* Accent line following the notch */}
+        {/* Right filled section */}
+        <path
+          d="M780,0 L780,5 Q800,5 820,25 L870,85 Q880,100 900,100 L1200,100 L1200,0 Z"
+          fill="rgb(3, 7, 18)"
+        />
+        {/* Accent line following the notch edge */}
         <path
           d="M330,85 L380,25 Q400,5 420,5 L780,5 Q800,5 820,25 L870,85"
           fill="none"
