@@ -88,19 +88,28 @@ export const ServicesSection = () => {
       id="servicios"
       className="py-20 lg:py-32 bg-gray-950 relative"
       style={{
-        clipPath: 'polygon(0 6%, 12% 3%, 25% 7%, 38% 4%, 50% 8%, 62% 3%, 75% 6%, 88% 4%, 100% 7%, 100% 100%, 0 100%)',
-        marginTop: '-10vh'
+        clipPath: 'polygon(0 0, 0 8%, 20% 8%, 25% 0, 75% 0, 80% 8%, 100% 8%, 100% 100%, 0 100%)',
+        marginTop: '-8vh'
       }}
     >
-      {/* Accent lines following the clip-path shape */}
-      <div className="absolute top-0 left-0 right-0 h-[80px] overflow-hidden pointer-events-none z-20">
+      {/* Accent lines for the angular cutouts */}
+      <div className="absolute top-0 left-0 right-0 h-[100px] overflow-hidden pointer-events-none z-20">
         <svg className="absolute w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 10">
+          {/* Left angular notch */}
           <path
-            d="M0,6 L12,3 L25,7 L38,4 L50,8 L62,3 L75,6 L88,4 L100,7"
+            d="M20,8 L25,0"
             fill="none"
             className="stroke-accent-400"
-            strokeWidth="0.2"
-            opacity="0.5"
+            strokeWidth="0.15"
+            opacity="0.6"
+          />
+          {/* Right angular notch */}
+          <path
+            d="M75,0 L80,8"
+            fill="none"
+            className="stroke-brand-500"
+            strokeWidth="0.15"
+            opacity="0.6"
           />
         </svg>
       </div>
