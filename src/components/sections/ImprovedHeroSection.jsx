@@ -153,7 +153,7 @@ export const ImprovedHeroSection = () => {
       {/* Dark gradient overlay for better contrast - Deep dark tones */}
       <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to bottom, rgba(16, 24, 32, 0.5), rgba(16, 24, 32, 0.3), rgba(16, 24, 32, 0.6))' }}></div>
 
-      <div className="container relative z-10 pt-52 pb-20">
+      <div className="container relative z-10 pt-52 pb-32 md:pb-20">
         <div className="max-w-4xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-500/20 backdrop-blur-sm rounded-full text-accent-300 text-sm font-semibold mb-6 border border-accent-500/30">
