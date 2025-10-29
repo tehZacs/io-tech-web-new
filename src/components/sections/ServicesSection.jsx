@@ -88,7 +88,7 @@ export const ServicesSection = () => {
       id="servicios"
       className="py-20 lg:py-32 bg-gray-950 relative"
       style={{
-        marginTop: '-8vh'
+        marginTop: '-100px'
       }}
     >
       {/* SVG shape - transparent at top (shows hero), filled at bottom (section color) */}
@@ -98,18 +98,18 @@ export const ServicesSection = () => {
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Main shape: straight top line with angular notch, filled bottom */}
+        {/* Main shape: top is transparent, bottom is filled. Wider notch from 30% to 70% */}
         <path
-          d="M0,100 L450,100 Q470,100 480,85 L520,25 Q530,10 550,10 L650,10 Q670,10 680,25 L720,85 Q730,100 750,100 L1200,100 L1200,0 L0,0 Z"
+          d="M0,0 L360,0 Q380,0 390,15 L480,70 Q500,85 600,85 Q700,85 720,70 L810,15 Q820,0 840,0 L1200,0 L1200,100 L0,100 Z"
           fill="rgb(3, 7, 18)"
         />
         {/* Accent lines on the notch edges */}
         <path
-          d="M480,85 L520,25 Q530,10 550,10 L650,10 Q670,10 680,25 L720,85"
+          d="M390,15 L480,70 Q500,85 600,85 Q700,85 720,70 L810,15"
           fill="none"
           className="stroke-accent-400"
           strokeWidth="2"
-          opacity="0.5"
+          opacity="0.6"
         />
       </svg>
 
