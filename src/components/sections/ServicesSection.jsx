@@ -84,11 +84,11 @@ export const ServicesSection = () => {
   ];
 
   return (
-    <section id="servicios" className="py-20 lg:py-32 bg-gray-950 relative overflow-hidden" style={{ marginTop: '-1px' }}>
+    <section id="servicios" className="relative overflow-hidden bg-gray-950" style={{ marginTop: '-140px', paddingTop: '200px', paddingBottom: '5rem' }}>
       {/* SVG Angular/Curved Divider at top - Creates irregular transition from hero */}
-      <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none" style={{ transform: 'translateY(-99%)' }}>
+      <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-10">
         <svg
-          className="relative block w-full h-[100px] md:h-[140px]"
+          className="relative block w-full h-[140px]"
           viewBox="0 0 1200 140"
           preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -96,27 +96,27 @@ export const ServicesSection = () => {
           {/* Main angular and curved shape - fills with section background */}
           <path
             d="M0,140 L0,80 L200,40 L400,70 Q600,90 800,60 L1000,80 L1200,50 L1200,140 Z"
-            fill="rgb(3, 7, 18)"
+            className="fill-gray-950"
           />
           {/* Accent angular shapes with IO-Tech colors */}
           <path
             d="M0,80 L200,40 L400,70"
             className="fill-none stroke-accent-400"
             strokeWidth="2"
-            opacity="0.5"
+            opacity="0.6"
           />
           <path
             d="M800,60 L1000,80 L1200,50"
             className="fill-none stroke-brand-500"
             strokeWidth="2"
-            opacity="0.5"
+            opacity="0.6"
           />
           {/* Curved accent */}
           <path
             d="M400,70 Q600,90 800,60"
             className="fill-none stroke-accent-300"
             strokeWidth="3"
-            opacity="0.4"
+            opacity="0.5"
           />
         </svg>
       </div>
