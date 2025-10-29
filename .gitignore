@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Backup and temporary files
+*.backup.jsx
+*.improved.jsx
+temp_*.xml
+*.docx
