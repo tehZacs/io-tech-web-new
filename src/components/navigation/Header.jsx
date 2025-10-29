@@ -94,7 +94,7 @@ export const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm'
+          ? 'bg-white/85 backdrop-blur-md border-b border-gray-200 shadow-sm'
           : 'bg-transparent border-b border-white/10'
       }`}
     >
