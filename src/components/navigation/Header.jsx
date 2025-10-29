@@ -102,7 +102,7 @@ export const Header = () => {
           ? '2px solid transparent'
           : '1px solid rgba(255, 255, 255, 0.1)',
         backgroundImage: isScrolled
-          ? 'linear-gradient(white, white), linear-gradient(90deg, transparent, rgba(25, 118, 210, 0.5) 30%, rgba(0, 188, 212, 0.5) 70%, transparent)'
+          ? 'linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), linear-gradient(90deg, transparent, rgba(25, 118, 210, 0.5) 30%, rgba(0, 188, 212, 0.5) 70%, transparent)'
           : 'none',
         backgroundOrigin: 'border-box',
         backgroundClip: 'padding-box, border-box'
