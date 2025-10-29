@@ -89,7 +89,7 @@ export const ServicesSection = () => {
       className="py-20 lg:py-32 bg-gray-950 relative"
       style={{ marginTop: '-100px' }}
     >
-      {/* SVG notch at the top - sides filled, center transparent */}
+      {/* SVG notch at the top - sides filled, center transparent, notch points DOWN */}
       <svg
         className="absolute top-0 left-0 w-full h-[100px] pointer-events-none z-10"
         viewBox="0 0 1200 100"
@@ -98,12 +98,12 @@ export const ServicesSection = () => {
       >
         {/* Left side - from left edge to notch */}
         <path
-          d="M0,0 L0,100 L300,100 Q320,100 330,85 L380,25 Q400,5 420,5 L420,0 Z"
+          d="M0,100 L0,0 L300,0 Q320,0 330,15 L380,75 Q400,95 420,95 L420,100 Z"
           className="fill-gray-950"
         />
         {/* Right side - from notch to right edge */}
         <path
-          d="M780,0 L780,5 Q800,5 820,25 L870,85 Q880,100 900,100 L1200,100 L1200,0 Z"
+          d="M780,100 L780,95 Q800,95 820,75 L870,15 Q880,0 900,0 L1200,0 L1200,100 Z"
           className="fill-gray-950"
         />
         {/* Accent line on notch edge */}
