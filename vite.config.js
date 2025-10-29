@@ -29,7 +29,8 @@ export default defineConfig({
   },
   // Optimize dev server
   server: {
-    port: 3000,
+    host: '127.0.0.1', // Use IPv4 only
+    port: 5173,
     strictPort: false,
     open: true,
   },

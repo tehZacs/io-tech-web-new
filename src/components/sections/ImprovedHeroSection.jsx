@@ -107,7 +107,7 @@ export const ImprovedHeroSection = () => {
   }, [currentImageIndex, showMatrix]);
 
   return (
-    <section className="relative min-h-[90vh] h-[90vh] flex items-center overflow-hidden -mt-20" style={{ backgroundColor: '#101820' }}>
+    <section className="relative min-h-[90vh] h-[90vh] flex items-center overflow-hidden pt-20 md:-mt-20 md:pt-0" style={{ backgroundColor: '#101820' }}>
       {/* Matrix Background Effect - Shown when isMatrixVisible is true */}
       <div
         className="absolute inset-0 z-0 transition-opacity duration-1500"

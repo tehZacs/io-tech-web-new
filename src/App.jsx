@@ -3,6 +3,7 @@ import { Header } from './components/navigation/Header';
 import { Footer } from './components/layout/Footer';
 import { ScrollToTop } from './components/utils/ScrollToTop';
 import { HomePage } from './pages/HomePage';
+import { HomePageKioTech } from './pages/HomePage.kiotech';
 import { ServiciosPage } from './pages/ServiciosPage';
 import { NosotrosPage } from './pages/NosotrosPage';
 import { ContactoPage } from './pages/ContactoPage';
@@ -29,6 +30,7 @@ function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/kiotech" element={<HomePageKioTech />} />
             <Route path="/servicios" element={<ServiciosPage />} />
             <Route path="/servicios/infraestructura-nube" element={<InfraestructuraNubePage />} />
             <Route path="/servicios/desarrollo-software" element={<DesarrolloSoftwarePage />} />
