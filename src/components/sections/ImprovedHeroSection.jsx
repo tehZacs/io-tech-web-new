@@ -198,28 +198,6 @@ export const ImprovedHeroSection = () => {
           </div>
         </div>
       </div>
-
-      {/* SVG notch at the bottom - bites into the hero */}
-      <svg
-        className="absolute bottom-0 left-0 w-full h-[100px] pointer-events-none z-20"
-        viewBox="0 0 1200 100"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* Notch shape filled with section color - inverted */}
-        <path
-          d="M0,100 L300,100 Q320,100 330,85 L380,25 Q400,5 420,5 L780,5 Q800,5 820,25 L870,85 Q880,100 900,100 L1200,100 L1200,0 L0,0 Z"
-          fill="rgb(3, 7, 18)"
-        />
-        {/* Accent line following the notch edge */}
-        <path
-          d="M330,85 L380,25 Q400,5 420,5 L780,5 Q800,5 820,25 L870,85"
-          fill="none"
-          className="stroke-accent-400"
-          strokeWidth="2"
-          opacity="0.6"
-        />
-      </svg>
     </section>
   );
 };

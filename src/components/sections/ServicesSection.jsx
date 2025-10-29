@@ -87,7 +87,37 @@ export const ServicesSection = () => {
     <section
       id="servicios"
       className="py-20 lg:py-32 bg-gray-950 relative"
+      style={{ marginTop: '-100px' }}
     >
+      {/* SVG notch at the top - points upward into the hero */}
+      <svg
+        className="absolute top-0 left-0 w-full h-[100px] pointer-events-none z-10"
+        viewBox="0 0 1200 100"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          {/* Gradient matching section background */}
+          <linearGradient id="sectionGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="rgb(3, 7, 18)" />
+            <stop offset="50%" stopColor="rgb(3, 7, 18)" />
+            <stop offset="100%" stopColor="rgb(3, 7, 18)" />
+          </linearGradient>
+        </defs>
+        {/* Notch shape - points upward */}
+        <path
+          d="M0,0 L300,0 Q320,0 330,15 L380,75 Q400,95 420,95 L780,95 Q800,95 820,75 L870,15 Q880,0 900,0 L1200,0 L1200,100 L0,100 Z"
+          fill="url(#sectionGradient)"
+        />
+        {/* Accent line following the notch edge */}
+        <path
+          d="M330,15 L380,75 Q400,95 420,95 L780,95 Q800,95 820,75 L870,15"
+          fill="none"
+          className="stroke-accent-400"
+          strokeWidth="2"
+          opacity="0.6"
+        />
+      </svg>
 
       {/* Bottom light border with gradient to transparent */}
       <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent"></div>
