@@ -128,10 +128,73 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Bottom wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg className="w-full h-20 fill-white" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" />
+      {/* Animated wave separator */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-[0]">
+        <svg
+          className="relative block w-full h-[80px] md:h-[120px]"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{ stopColor: '#00BCD4', stopOpacity: 1 }} />
+              <stop offset="50%" style={{ stopColor: '#1976D2', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#0D47A1', stopOpacity: 1 }} />
+            </linearGradient>
+          </defs>
+
+          {/* Animated wave path */}
+          <path
+            d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z"
+            fill="url(#waveGradient)"
+          >
+            <animate
+              attributeName="d"
+              dur="10s"
+              repeatCount="indefinite"
+              values="
+                M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z;
+                M0,50 C150,0 350,100 600,50 C850,0 1050,100 1200,50 L1200,120 L0,120 Z;
+                M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z
+              "
+            />
+          </path>
+
+          {/* Second layer for depth */}
+          <path
+            d="M0,20 C200,80 400,20 600,60 C800,100 1000,40 1200,80 L1200,120 L0,120 Z"
+            fill="white"
+            opacity="0.5"
+          >
+            <animate
+              attributeName="d"
+              dur="8s"
+              repeatCount="indefinite"
+              values="
+                M0,20 C200,80 400,20 600,60 C800,100 1000,40 1200,80 L1200,120 L0,120 Z;
+                M0,60 C200,20 400,80 600,40 C800,20 1000,80 1200,60 L1200,120 L0,120 Z;
+                M0,20 C200,80 400,20 600,60 C800,100 1000,40 1200,80 L1200,120 L0,120 Z
+              "
+            />
+          </path>
+
+          {/* Third layer - white base */}
+          <path
+            d="M0,60 C300,100 500,60 700,80 C900,100 1100,80 1200,100 L1200,120 L0,120 Z"
+            fill="white"
+          >
+            <animate
+              attributeName="d"
+              dur="12s"
+              repeatCount="indefinite"
+              values="
+                M0,60 C300,100 500,60 700,80 C900,100 1100,80 1200,100 L1200,120 L0,120 Z;
+                M0,80 C300,60 500,100 700,70 C900,60 1100,100 1200,90 L1200,120 L0,120 Z;
+                M0,60 C300,100 500,60 700,80 C900,100 1100,80 1200,100 L1200,120 L0,120 Z
+              "
+            />
+          </path>
         </svg>
       </div>
     </section>

@@ -87,34 +87,96 @@ export const ServicesSection = () => {
     <section
       id="servicios"
       className="py-20 lg:py-32 bg-gray-950 relative"
-      style={{ marginTop: '-100px' }}
     >
-      {/* SVG notch at the top - sides filled, center transparent, notch points DOWN */}
-      <svg
-        className="absolute top-0 left-0 w-full h-[100px] pointer-events-none z-10"
-        viewBox="0 0 1200 100"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* Left side - from left edge to notch */}
-        <path
-          d="M0,100 L0,0 L300,0 Q320,0 330,15 L380,75 Q400,95 420,95 L420,100 Z"
-          className="fill-gray-950"
-        />
-        {/* Right side - from notch to right edge */}
-        <path
-          d="M780,100 L780,95 Q800,95 820,75 L870,15 Q880,0 900,0 L1200,0 L1200,100 Z"
-          className="fill-gray-950"
-        />
-        {/* Accent line on notch edge */}
-        <path
-          d="M330,15 L380,75 Q400,95 420,95 L780,95 Q800,95 820,75 L870,15"
-          fill="none"
-          className="stroke-accent-400"
-          strokeWidth="2"
-          opacity="0.6"
-        />
-      </svg>
+      {/* Top glow line */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/80 to-transparent shadow-[0_0_20px_rgba(0,188,212,0.6)]"></div>
+
+      {/* Top central semicircle with gradient - mirrored */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 rounded-b-full bg-gradient-to-b from-cyan-400/20 to-transparent blur-xl"></div>
+
+      {/* Animated wave separator at top - mirrored vertically */}
+      <div className="absolute top-0 left-0 right-0 overflow-hidden leading-[0] z-20" style={{ transform: 'scaleY(-1)' }}>
+        <svg
+          className="relative block w-full h-[50px] md:h-[80px]"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            {/* Cyan gradient for first wave */}
+            <linearGradient id="wave1GradientTop" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{ stopColor: '#00BCD4', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#26C6DA', stopOpacity: 1 }} />
+            </linearGradient>
+
+            {/* Blue primary gradient for second wave */}
+            <linearGradient id="wave2GradientTop" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{ stopColor: '#1976D2', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#42A5F5', stopOpacity: 1 }} />
+            </linearGradient>
+
+            {/* Black gradient for third wave */}
+            <linearGradient id="wave3GradientTop" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{ stopColor: '#000000', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#1a1a1a', stopOpacity: 1 }} />
+            </linearGradient>
+          </defs>
+
+          {/* First wave - Cyan - More amplitude */}
+          <path
+            d="M0,0 C200,80 400,0 600,40 C800,80 1000,0 1200,40 L1200,120 L0,120 Z"
+            fill="url(#wave1GradientTop)"
+            opacity="0.15"
+          >
+            <animate
+              attributeName="d"
+              dur="10s"
+              repeatCount="indefinite"
+              values="
+                M0,0 C200,80 400,0 600,40 C800,80 1000,0 1200,40 L1200,120 L0,120 Z;
+                M0,40 C200,0 400,80 600,40 C800,0 1000,80 1200,40 L1200,120 L0,120 Z;
+                M0,0 C200,80 400,0 600,40 C800,80 1000,0 1200,40 L1200,120 L0,120 Z
+              "
+            />
+          </path>
+
+          {/* Second wave - Blue Primary - More amplitude */}
+          <path
+            d="M0,20 C250,90 450,20 600,50 C750,90 950,30 1200,70 L1200,120 L0,120 Z"
+            fill="url(#wave2GradientTop)"
+            opacity="0.12"
+          >
+            <animate
+              attributeName="d"
+              dur="8s"
+              repeatCount="indefinite"
+              values="
+                M0,20 C250,90 450,20 600,50 C750,90 950,30 1200,70 L1200,120 L0,120 Z;
+                M0,50 C250,30 450,90 600,40 C750,20 950,80 1200,50 L1200,120 L0,120 Z;
+                M0,20 C250,90 450,20 600,50 C750,90 950,30 1200,70 L1200,120 L0,120 Z
+              "
+            />
+          </path>
+
+          {/* Third wave - Black - More amplitude */}
+          <path
+            d="M0,50 C300,100 500,50 700,70 C900,100 1100,60 1200,90 L1200,120 L0,120 Z"
+            fill="url(#wave3GradientTop)"
+            opacity="0.2"
+          >
+            <animate
+              attributeName="d"
+              dur="12s"
+              repeatCount="indefinite"
+              values="
+                M0,50 C300,100 500,50 700,70 C900,100 1100,60 1200,90 L1200,120 L0,120 Z;
+                M0,70 C300,60 500,100 700,60 C900,50 1100,100 1200,80 L1200,120 L0,120 Z;
+                M0,50 C300,100 500,50 700,70 C900,100 1100,60 1200,90 L1200,120 L0,120 Z
+              "
+            />
+          </path>
+        </svg>
+      </div>
 
       {/* Bottom light border with gradient to transparent */}
       <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent"></div>
@@ -187,3 +249,7 @@ export const ServicesSection = () => {
     </section>
   );
 };
+
+
+
+
