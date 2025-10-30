@@ -199,6 +199,89 @@ export const ImprovedHeroSection = () => {
         </div>
       </div>
 
+      {/* Animated wave separator */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-[0] z-20">
+        <svg
+          className="relative block w-full h-[50px] md:h-[80px]"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            {/* Cyan gradient for first wave */}
+            <linearGradient id="wave1Gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{ stopColor: '#00BCD4', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#26C6DA', stopOpacity: 1 }} />
+            </linearGradient>
+
+            {/* Blue primary gradient for second wave */}
+            <linearGradient id="wave2Gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{ stopColor: '#1976D2', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#42A5F5', stopOpacity: 1 }} />
+            </linearGradient>
+
+            {/* Black gradient for third wave */}
+            <linearGradient id="wave3Gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style={{ stopColor: '#000000', stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: '#1a1a1a', stopOpacity: 1 }} />
+            </linearGradient>
+          </defs>
+
+          {/* First wave - Cyan - Extreme amplitude variation */}
+          <path
+            d="M0,0 C200,115 400,0 600,60 C800,115 1000,0 1200,60 L1200,120 L0,120 Z"
+            fill="url(#wave1Gradient)"
+            opacity="0.15"
+          >
+            <animate
+              attributeName="d"
+              dur="10s"
+              repeatCount="indefinite"
+              values="
+                M0,0 C200,115 400,0 600,60 C800,115 1000,0 1200,60 L1200,120 L0,120 Z;
+                M0,60 C200,0 400,115 600,60 C800,0 1000,115 1200,60 L1200,120 L0,120 Z;
+                M0,0 C200,115 400,0 600,60 C800,115 1000,0 1200,60 L1200,120 L0,120 Z
+              "
+            />
+          </path>
+
+          {/* Second wave - Blue Primary - Extreme amplitude variation */}
+          <path
+            d="M0,5 C250,120 450,5 600,70 C750,120 950,15 1200,85 L1200,120 L0,120 Z"
+            fill="url(#wave2Gradient)"
+            opacity="0.12"
+          >
+            <animate
+              attributeName="d"
+              dur="8s"
+              repeatCount="indefinite"
+              values="
+                M0,5 C250,120 450,5 600,70 C750,120 950,15 1200,85 L1200,120 L0,120 Z;
+                M0,70 C250,15 450,120 600,60 C750,5 950,110 1200,70 L1200,120 L0,120 Z;
+                M0,5 C250,120 450,5 600,70 C750,120 950,15 1200,85 L1200,120 L0,120 Z
+              "
+            />
+          </path>
+
+          {/* Third wave - Black - Extreme amplitude variation */}
+          <path
+            d="M0,30 C300,115 500,30 700,85 C900,115 1100,45 1200,105 L1200,120 L0,120 Z"
+            fill="url(#wave3Gradient)"
+            opacity="0.2"
+          >
+            <animate
+              attributeName="d"
+              dur="12s"
+              repeatCount="indefinite"
+              values="
+                M0,30 C300,115 500,30 700,85 C900,115 1100,45 1200,105 L1200,120 L0,120 Z;
+                M0,85 C300,45 500,115 700,75 C900,30 1100,115 1200,95 L1200,120 L0,120 Z;
+                M0,30 C300,115 500,30 700,85 C900,115 1100,45 1200,105 L1200,120 L0,120 Z
+              "
+            />
+          </path>
+        </svg>
+      </div>
     </section>
   );
 };
