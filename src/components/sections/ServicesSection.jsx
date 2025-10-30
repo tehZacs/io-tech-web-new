@@ -122,56 +122,56 @@ export const ServicesSection = () => {
             </linearGradient>
           </defs>
 
-          {/* First wave - Cyan - More amplitude */}
+          {/* First wave - Cyan - Different animation pattern with extreme variation */}
           <path
-            d="M0,0 C200,80 400,0 600,40 C800,80 1000,0 1200,40 L1200,120 L0,120 Z"
+            d="M0,60 C200,0 400,115 600,60 C800,0 1000,115 1200,60 L1200,120 L0,120 Z"
             fill="url(#wave1GradientTop)"
             opacity="0.15"
           >
             <animate
               attributeName="d"
-              dur="10s"
+              dur="9s"
               repeatCount="indefinite"
               values="
-                M0,0 C200,80 400,0 600,40 C800,80 1000,0 1200,40 L1200,120 L0,120 Z;
-                M0,40 C200,0 400,80 600,40 C800,0 1000,80 1200,40 L1200,120 L0,120 Z;
-                M0,0 C200,80 400,0 600,40 C800,80 1000,0 1200,40 L1200,120 L0,120 Z
+                M0,60 C200,0 400,115 600,60 C800,0 1000,115 1200,60 L1200,120 L0,120 Z;
+                M0,25 C200,95 400,25 600,75 C800,95 1000,25 1200,75 L1200,120 L0,120 Z;
+                M0,60 C200,0 400,115 600,60 C800,0 1000,115 1200,60 L1200,120 L0,120 Z
               "
             />
           </path>
 
-          {/* Second wave - Blue Primary - More amplitude */}
+          {/* Second wave - Blue Primary - Different animation pattern with extreme variation */}
           <path
-            d="M0,20 C250,90 450,20 600,50 C750,90 950,30 1200,70 L1200,120 L0,120 Z"
+            d="M0,70 C250,10 450,120 600,60 C750,5 950,110 1200,70 L1200,120 L0,120 Z"
             fill="url(#wave2GradientTop)"
             opacity="0.12"
           >
             <animate
               attributeName="d"
-              dur="8s"
+              dur="11s"
               repeatCount="indefinite"
               values="
-                M0,20 C250,90 450,20 600,50 C750,90 950,30 1200,70 L1200,120 L0,120 Z;
-                M0,50 C250,30 450,90 600,40 C750,20 950,80 1200,50 L1200,120 L0,120 Z;
-                M0,20 C250,90 450,20 600,50 C750,90 950,30 1200,70 L1200,120 L0,120 Z
+                M0,70 C250,10 450,120 600,60 C750,5 950,110 1200,70 L1200,120 L0,120 Z;
+                M0,15 C250,105 450,25 600,85 C750,105 950,35 1200,95 L1200,120 L0,120 Z;
+                M0,70 C250,10 450,120 600,60 C750,5 950,110 1200,70 L1200,120 L0,120 Z
               "
             />
           </path>
 
-          {/* Third wave - Black - More amplitude */}
+          {/* Third wave - Black - Different animation pattern with extreme variation */}
           <path
-            d="M0,50 C300,100 500,50 700,70 C900,100 1100,60 1200,90 L1200,120 L0,120 Z"
+            d="M0,85 C300,40 500,115 700,75 C900,30 1100,115 1200,95 L1200,120 L0,120 Z"
             fill="url(#wave3GradientTop)"
             opacity="0.2"
           >
             <animate
               attributeName="d"
-              dur="12s"
+              dur="13s"
               repeatCount="indefinite"
               values="
-                M0,50 C300,100 500,50 700,70 C900,100 1100,60 1200,90 L1200,120 L0,120 Z;
-                M0,70 C300,60 500,100 700,60 C900,50 1100,100 1200,80 L1200,120 L0,120 Z;
-                M0,50 C300,100 500,50 700,70 C900,100 1100,60 1200,90 L1200,120 L0,120 Z
+                M0,85 C300,40 500,115 700,75 C900,30 1100,115 1200,95 L1200,120 L0,120 Z;
+                M0,45 C300,105 500,55 700,95 C900,105 1100,65 1200,105 L1200,120 L0,120 Z;
+                M0,85 C300,40 500,115 700,75 C900,30 1100,115 1200,95 L1200,120 L0,120 Z
               "
             />
           </path>
