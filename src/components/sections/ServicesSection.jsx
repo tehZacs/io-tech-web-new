@@ -102,11 +102,11 @@ export const ServicesSection = () => {
             }
           }
         `}</style>
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" style={{ animation: 'breathe 3s ease-in-out infinite' }}></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" style={{ animation: 'breathe 5s ease-in-out infinite' }}></div>
       </div>
 
       {/* Top central semicircle with gradient - mirrored and breathing */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 rounded-b-full bg-gradient-to-b from-cyan-400/20 to-transparent blur-xl" style={{ animation: 'breathe 3s ease-in-out infinite' }}></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 rounded-b-full bg-gradient-to-b from-cyan-400/20 to-transparent blur-xl" style={{ animation: 'breathe 5s ease-in-out infinite' }}></div>
 
       {/* Animated wave separator at top - mirrored vertically */}
       <div className="absolute top-0 left-0 right-0 overflow-hidden leading-[0] z-20" style={{ transform: 'scaleY(-1)' }}>
@@ -194,11 +194,11 @@ export const ServicesSection = () => {
 
       {/* Bottom light border with gradient to transparent and breathing animation */}
       <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" style={{ animation: 'breathe 3s ease-in-out infinite' }}></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" style={{ animation: 'breathe 5s ease-in-out infinite' }}></div>
       </div>
 
       {/* Bottom central semicircle with gradient to transparent and breathing animation */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 h-32 rounded-t-full bg-gradient-to-t from-cyan-400/20 to-transparent blur-xl" style={{ animation: 'breathe 3s ease-in-out infinite' }}></div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 h-32 rounded-t-full bg-gradient-to-t from-cyan-400/20 to-transparent blur-xl" style={{ animation: 'breathe 5s ease-in-out infinite' }}></div>
 
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(39,174,229,0.1),transparent_50%)]"></div>
