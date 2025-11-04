@@ -34,14 +34,14 @@ export const ImprovedHeroSection = () => {
     if (!showAsciiArt) return;
 
     let progress = 0;
-    const totalChars = 100; // Approximate total characters
-    const animationSpeed = 30; // milliseconds per character
+    const totalLines = 42; // Total lines in ASCII art
+    const animationSpeed = 80; // milliseconds per line
 
     const interval = setInterval(() => {
       progress += 1;
       setAsciiProgress(progress);
 
-      if (progress >= totalChars) {
+      if (progress >= totalLines) {
         clearInterval(interval);
       }
     }, animationSpeed);
@@ -196,31 +196,55 @@ export const ImprovedHeroSection = () => {
 
       {/* ASCII Art Display - Animated construction of IO-TECH logo */}
       <div
-        className="absolute inset-0 z-[15] flex items-center justify-center transition-opacity duration-1500"
+        className="absolute inset-0 z-[15] flex items-center justify-center transition-opacity duration-1500 overflow-hidden"
         style={{ opacity: showAsciiArt ? 1 : 0, pointerEvents: showAsciiArt ? 'auto' : 'none' }}
       >
-        <pre className="text-cyan-400 font-mono text-xs sm:text-sm md:text-base lg:text-lg leading-tight tracking-tight select-none px-4" style={{ textShadow: '0 0 10px rgba(0, 188, 212, 0.5)' }}>
-          {asciiProgress >= 5 && '                ╭────────╮\n'}
-          {asciiProgress >= 10 && '                │        │\n'}
-          {asciiProgress >= 15 && '        ╭───────┤  ◉◉    │\n'}
-          {asciiProgress >= 20 && '        │       │  ││    │\n'}
-          {asciiProgress >= 25 && '     ╭──┴──╮    │  ││    │\n'}
-          {asciiProgress >= 30 && '     │  ◉  │    │  ││    │\n'}
-          {asciiProgress >= 35 && '     ╰──┬──╯    │  ││    │\n'}
-          {asciiProgress >= 40 && '        │       │  ││    │\n'}
-          {asciiProgress >= 45 && '        ╰───────┤  ││    │\n'}
-          {asciiProgress >= 50 && '                │  ││    │\n'}
-          {asciiProgress >= 55 && '        ◯───────┼──┘│    │───────◯\n'}
-          {asciiProgress >= 60 && '                │   │    │\n'}
-          {asciiProgress >= 65 && '                │   │    │\n'}
-          {asciiProgress >= 70 && '        ◯───────┼───┘    │───────◯\n'}
-          {asciiProgress >= 75 && '                │        │\n'}
-          {asciiProgress >= 80 && '                ╰────────╯\n'}
-          {asciiProgress >= 85 && '\n'}
-          {asciiProgress >= 90 && '              ╔══════════════╗\n'}
-          {asciiProgress >= 95 && '              ║   IO - TECH   ║\n'}
-          {asciiProgress >= 100 && '              ╚══════════════╝\n'}
-        </pre>
+        <div className="flex flex-col items-center justify-center">
+          <pre className="text-cyan-400 font-mono text-[6px] sm:text-[8px] md:text-[10px] lg:text-xs xl:text-sm leading-[1.1] tracking-tighter select-none px-2" style={{ textShadow: '0 0 10px rgba(0, 188, 212, 0.8)' }}>
+{asciiProgress >= 1 && '                                   =+++++++++++++                                                   \n'}
+{asciiProgress >= 2 && '                                +++++++++++++++++    **                                             \n'}
+{asciiProgress >= 3 && '                              ++++++++++++++++++   *******                                          \n'}
+{asciiProgress >= 4 && '                            ++++++++++++++++++++  *********                                         \n'}
+{asciiProgress >= 5 && '                ++++++     ++++++++++++++++++++  **********                                         \n'}
+{asciiProgress >= 6 && '             ++++++++++++++++++++++++++++++++++  **********                                         \n'}
+{asciiProgress >= 7 && '           +++++++++++++++++++++++++++++++++++  **********   *****                                  \n'}
+{asciiProgress >= 8 && '          +++++++++++++++++++++++++++++++++++  **********  *********                                \n'}
+{asciiProgress >= 9 && '         +++++++++++++++++++++++++++++++++++=  **********  *********                                \n'}
+{asciiProgress >= 10 && '         +++++++++++++++++++++++++++++++++++  **********  **********                                \n'}
+{asciiProgress >= 11 && '        +++++++++++++++++++++++++++++++++++   *********  **********           +++++++               \n'}
+{asciiProgress >= 12 && '     ++++++++++++++++++++++++++++++++++++++  **********  *********  ++++++++++++++++++              \n'}
+{asciiProgress >= 13 && '   +++++++++++++++++++++++++++++++++++++++  **********  **********  ++++++++++++++++++    +++       \n'}
+{asciiProgress >= 14 && '  +++++++++++++++++++++++++++++++++++++++   *********  **********  ++++++++++++++++++++  +++++      \n'}
+{asciiProgress >= 15 && ' ++++++++++++++++++++++++++++++++++++++++  **********  ********** ++++++++++++++++++++     +        \n'}
+{asciiProgress >= 16 && '++++++++++++++++++++++++++++++++++++++++  **********  **********  +++++++    ++++++++               \n'}
+{asciiProgress >= 17 && '++++++++++++++++++++++++++++++++++++++++  **********  *********  +++++++++                          \n'}
+{asciiProgress >= 18 && '+++++++++++++++++++++++++++++++++++++++  **********  ********** +++++++++++                         \n'}
+{asciiProgress >= 19 && '++++++++++++++++++++++++++++++++++++++   *********  **********  +++++++++++=        ++++++++        \n'}
+{asciiProgress >= 20 && '++++++++++++++++++++++++++++++++++++++  **********  *********  +++    +++++++++++++++++++++++    ++ \n'}
+{asciiProgress >= 21 && ' ++++++++++++++++++++++++++++++++++++  **********  ********** ++++=   +++++++++++++++++++++++   ++++\n'}
+{asciiProgress >= 22 && ' +++++++++++++++++++++++++++++++++++   *********  **********  ++++     ++++++++++++++++++++++   ++++\n'}
+{asciiProgress >= 23 && '  ++++++++++++++++++++++++++++++++++  **********  *********              +++++++++++++++++++        \n'}
+{asciiProgress >= 24 && '    +++++++++++++++++++++++++++++++  **********   *********                          ++++++         \n'}
+{asciiProgress >= 25 && '      ++++++++++++++++++++++++++++=  *********     *******                                          \n'}
+{asciiProgress >= 26 && '         +++++++++++++++++++++++++   *********                                                      \n'}
+{asciiProgress >= 27 && '                                       ******                                                       \n'}
+{asciiProgress >= 28 && '                                                                                                    \n'}
+{asciiProgress >= 29 && '                                                                                                    \n'}
+{asciiProgress >= 30 && '                                                                                                    \n'}
+{asciiProgress >= 31 && '                                                                                                    \n'}
+{asciiProgress >= 32 && '   #####             #########            ###############                           ####            \n'}
+{asciiProgress >= 33 && '   ######        **##############        %###############                           ####            \n'}
+{asciiProgress >= 34 && '   ######      ++#################        ###############   ######                  #### #####      \n'}
+{asciiProgress >= 35 && '   ######    +++*######     #######            #####     ###########   ############ ############    \n'}
+{asciiProgress >= 36 && '   ######  +++++######       ######            #####    #############  ###########  #############   \n'}
+{asciiProgress >= 37 && '   ######+++++++######       ######            #####    ############# #####         ####     ####   \n'}
+{asciiProgress >= 38 && '   #####*+++++++######       ######            #####    ############# #####         ####     ####   \n'}
+{asciiProgress >= 39 && '   #####++++++  ###################            #####    #####         %####         ####     ####   \n'}
+{asciiProgress >= 40 && '   #####++++    %#################             #####     ############  ###########  ####     ####   \n'}
+{asciiProgress >= 41 && '   #####++        ###############              #####      ###########   ########### ####     ####   \n'}
+{asciiProgress >= 42 && '\n'}
+          </pre>
+        </div>
       </div>
 
       <div className="container relative z-10 pt-32 md:pt-52 pb-32 md:pb-20">
