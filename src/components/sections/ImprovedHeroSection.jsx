@@ -194,26 +194,32 @@ export const ImprovedHeroSection = () => {
       {/* Dark gradient overlay for better contrast - Deep dark tones */}
       <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to bottom, rgba(16, 24, 32, 0.5), rgba(16, 24, 32, 0.3), rgba(16, 24, 32, 0.6))' }}></div>
 
-      {/* ASCII Art Display - Animated construction */}
+      {/* ASCII Art Display - Animated construction of IO-TECH logo */}
       <div
         className="absolute inset-0 z-[15] flex items-center justify-center transition-opacity duration-1500"
         style={{ opacity: showAsciiArt ? 1 : 0, pointerEvents: showAsciiArt ? 'auto' : 'none' }}
       >
-        <pre className="text-cyan-400 font-mono text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-tight tracking-tight select-none px-4" style={{ textShadow: '0 0 10px rgba(0, 188, 212, 0.5)' }}>
-          {asciiProgress >= 0 && '    _____ ____        _______ ______ _____ _    _ \n'}
-          {asciiProgress >= 10 && '   |_   _/ __ \\      |__   __|  ____/ ____| |  | |\n'}
-          {asciiProgress >= 20 && '     | || |  | |  ______| |  | |__ | |    | |__| |\n'}
-          {asciiProgress >= 30 && '     | || |  | | |______| |  |  __|| |    |  __  |\n'}
-          {asciiProgress >= 40 && '    _| || |__| |        | |  | |___| |____| |  | |\n'}
-          {asciiProgress >= 50 && '   |_____\\____/         |_|  |______\\_____|_|  |_|\n'}
-          {asciiProgress >= 60 && '\n'}
-          {asciiProgress >= 70 && '   ╔═══════════════════════════════════════════════╗\n'}
-          {asciiProgress >= 75 && '   ║    Innovación • Tecnología • Excelencia      ║\n'}
-          {asciiProgress >= 80 && '   ╚═══════════════════════════════════════════════╝\n'}
+        <pre className="text-cyan-400 font-mono text-xs sm:text-sm md:text-base lg:text-lg leading-tight tracking-tight select-none px-4" style={{ textShadow: '0 0 10px rgba(0, 188, 212, 0.5)' }}>
+          {asciiProgress >= 5 && '                ╭────────╮\n'}
+          {asciiProgress >= 10 && '                │        │\n'}
+          {asciiProgress >= 15 && '        ╭───────┤  ◉◉    │\n'}
+          {asciiProgress >= 20 && '        │       │  ││    │\n'}
+          {asciiProgress >= 25 && '     ╭──┴──╮    │  ││    │\n'}
+          {asciiProgress >= 30 && '     │  ◉  │    │  ││    │\n'}
+          {asciiProgress >= 35 && '     ╰──┬──╯    │  ││    │\n'}
+          {asciiProgress >= 40 && '        │       │  ││    │\n'}
+          {asciiProgress >= 45 && '        ╰───────┤  ││    │\n'}
+          {asciiProgress >= 50 && '                │  ││    │\n'}
+          {asciiProgress >= 55 && '        ◯───────┼──┘│    │───────◯\n'}
+          {asciiProgress >= 60 && '                │   │    │\n'}
+          {asciiProgress >= 65 && '                │   │    │\n'}
+          {asciiProgress >= 70 && '        ◯───────┼───┘    │───────◯\n'}
+          {asciiProgress >= 75 && '                │        │\n'}
+          {asciiProgress >= 80 && '                ╰────────╯\n'}
           {asciiProgress >= 85 && '\n'}
-          {asciiProgress >= 90 && '        [█████████████████████████████████]\n'}
-          {asciiProgress >= 95 && '          Soluciones Integrales de Software\n'}
-          {asciiProgress >= 100 && '                  Est. 2024\n'}
+          {asciiProgress >= 90 && '              ╔══════════════╗\n'}
+          {asciiProgress >= 95 && '              ║   IO - TECH   ║\n'}
+          {asciiProgress >= 100 && '              ╚══════════════╝\n'}
         </pre>
       </div>
 
