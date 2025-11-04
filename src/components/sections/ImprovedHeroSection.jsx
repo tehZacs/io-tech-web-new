@@ -26,6 +26,28 @@ export const ImprovedHeroSection = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [showMatrix, setShowMatrix] = useState(true); // Start with Matrix
   const [isMatrixVisible, setIsMatrixVisible] = useState(true);
+  const [showAsciiArt, setShowAsciiArt] = useState(false);
+  const [asciiProgress, setAsciiProgress] = useState(0);
+
+  // ASCII Art building animation
+  useEffect(() => {
+    if (!showAsciiArt) return;
+
+    let progress = 0;
+    const totalChars = 100; // Approximate total characters
+    const animationSpeed = 30; // milliseconds per character
+
+    const interval = setInterval(() => {
+      progress += 1;
+      setAsciiProgress(progress);
+
+      if (progress >= totalChars) {
+        clearInterval(interval);
+      }
+    }, animationSpeed);
+
+    return () => clearInterval(interval);
+  }, [showAsciiArt]);
 
   useEffect(() => {
     // Preload only next 2 images to save bandwidth (lazy loading strategy)
@@ -49,10 +71,21 @@ export const ImprovedHeroSection = () => {
     // Preload initial images
     preloadImages(currentImageIndex);
 
-    // Alternate between Matrix (30s) and Images (30s each)
+    // Alternate between Matrix (30s), ASCII Art (30s) and Images (30s each)
     const interval = setInterval(() => {
       if (showMatrix) {
-        // Currently showing Matrix, switch to image
+        // Currently showing Matrix, switch to ASCII Art
+        setIsTransitioning(true);
+        setTimeout(() => {
+          setIsMatrixVisible(false);
+          setShowAsciiArt(true);
+          setAsciiProgress(0);
+          setIsTransitioning(false);
+          setShowMatrix(false);
+        }, 1500);
+
+      } else if (showAsciiArt) {
+        // Currently showing ASCII Art, switch to image
         setIsTransitioning(true);
 
         // Get random next image (different from current)
@@ -64,24 +97,32 @@ export const ImprovedHeroSection = () => {
         setNextImageIndex(randomIndex);
         preloadImages(randomIndex);
 
-        // Fade out Matrix, fade in image
+        // Fade out ASCII Art, fade in image
         setTimeout(() => {
-          setIsMatrixVisible(false);
+          setShowAsciiArt(false);
           setCurrentImageIndex(randomIndex);
           setIsTransitioning(false);
-          setShowMatrix(false);
         }, 1500);
 
       } else {
-        // Currently showing image, switch to Matrix or next image
-        // 50% chance to show Matrix, 50% to show another image
-        if (Math.random() > 0.5) {
+        // Currently showing image, decide what to show next
+        const random = Math.random();
+
+        if (random < 0.33) {
           // Show Matrix
           setIsTransitioning(true);
           setTimeout(() => {
             setIsMatrixVisible(true);
             setIsTransitioning(false);
             setShowMatrix(true);
+          }, 1500);
+        } else if (random < 0.66) {
+          // Show ASCII Art
+          setIsTransitioning(true);
+          setTimeout(() => {
+            setShowAsciiArt(true);
+            setAsciiProgress(0);
+            setIsTransitioning(false);
           }, 1500);
         } else {
           // Show another image
@@ -104,7 +145,7 @@ export const ImprovedHeroSection = () => {
     }, 30000); // 30 seconds
 
     return () => clearInterval(interval);
-  }, [currentImageIndex, showMatrix]);
+  }, [currentImageIndex, showMatrix, showAsciiArt]);
 
   return (
     <section className="relative min-h-[90vh] h-[90vh] flex items-center overflow-hidden pt-20 md:-mt-20 md:pt-0" style={{ backgroundColor: '#101820' }}>
@@ -153,8 +194,31 @@ export const ImprovedHeroSection = () => {
       {/* Dark gradient overlay for better contrast - Deep dark tones */}
       <div className="absolute inset-0 z-[1]" style={{ background: 'linear-gradient(to bottom, rgba(16, 24, 32, 0.5), rgba(16, 24, 32, 0.3), rgba(16, 24, 32, 0.6))' }}></div>
 
+      {/* ASCII Art Display - Animated construction */}
+      <div
+        className="absolute inset-0 z-[15] flex items-center justify-center transition-opacity duration-1500"
+        style={{ opacity: showAsciiArt ? 1 : 0, pointerEvents: showAsciiArt ? 'auto' : 'none' }}
+      >
+        <pre className="text-cyan-400 font-mono text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-tight tracking-tight select-none px-4" style={{ textShadow: '0 0 10px rgba(0, 188, 212, 0.5)' }}>
+          {asciiProgress >= 0 && '    _____ ____        _______ ______ _____ _    _ \n'}
+          {asciiProgress >= 10 && '   |_   _/ __ \\      |__   __|  ____/ ____| |  | |\n'}
+          {asciiProgress >= 20 && '     | || |  | |  ______| |  | |__ | |    | |__| |\n'}
+          {asciiProgress >= 30 && '     | || |  | | |______| |  |  __|| |    |  __  |\n'}
+          {asciiProgress >= 40 && '    _| || |__| |        | |  | |___| |____| |  | |\n'}
+          {asciiProgress >= 50 && '   |_____\\____/         |_|  |______\\_____|_|  |_|\n'}
+          {asciiProgress >= 60 && '\n'}
+          {asciiProgress >= 70 && '   ╔═══════════════════════════════════════════════╗\n'}
+          {asciiProgress >= 75 && '   ║    Innovación • Tecnología • Excelencia      ║\n'}
+          {asciiProgress >= 80 && '   ╚═══════════════════════════════════════════════╝\n'}
+          {asciiProgress >= 85 && '\n'}
+          {asciiProgress >= 90 && '        [█████████████████████████████████]\n'}
+          {asciiProgress >= 95 && '          Soluciones Integrales de Software\n'}
+          {asciiProgress >= 100 && '                  Est. 2024\n'}
+        </pre>
+      </div>
+
       <div className="container relative z-10 pt-32 md:pt-52 pb-32 md:pb-20">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl" style={{ opacity: showAsciiArt ? 0 : 1, transition: 'opacity 0.5s' }}>
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent-500/20 backdrop-blur-sm rounded-full text-accent-300 text-sm font-semibold mb-6 border border-accent-500/30">
             <div className="w-2 h-2 bg-accent-400 rounded-full animate-pulse"></div>
